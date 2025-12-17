@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <style>
+        /* Basic Reset & Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #f4f4f4;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: #666; }
+
+        /* Project Grid */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card-content { padding: 15px; }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><strong>DevPortfolio</strong></div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hi, I'm Alex.</h1>
+        <p>A Full-Stack Developer specializing in clean code and user-centric design.</p>
+    </header>
+
+    <section id="projects" class="container">
+        <h2 style="text-align:center;">Selected Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-featured online store built with React and Node.js.</p>
+                    <a href="#">View Project →</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Weather Dashboard</h3>
+                    <p>Real-time weather tracking using OpenWeather API.</p>
+                    <a href="#">View Project →</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Task Manager</h3>
+                    <p>A productivity app focused on drag-and-drop task management.</p>
+                    <a href="#">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="text-align: center;">
+        <h2>Get In Touch</h2>
+        <p>I'm currently looking for new opportunities!</p>
+        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Alex Developer. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>

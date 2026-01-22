@@ -45,21 +45,264 @@
       <!-- Main -->
       <article id="main">
         <header>
-          <h2>App ท่องศัพท์ประถม</h2>
+          <h2>App ท่องศัพท์ระดับประถม</h2>
           <!-- <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p> -->
         </header>
         <section class="wrapper style5">
-          <!-- Two Empty Columns -->
-
-          <div class="col-6" style="text-align: center">
+          <div class="inner" style="text-align: center">
+            <!-- Main Image -->
             <img
               src="images/pic01.png"
               alt="pic01"
-              style="width: 50%; height: auto"
+              style="width: 50%; height: auto; margin-bottom: 40px"
             />
+
+            <!-- Single Image Carousel -->
+            <div style="margin-top: 40px">
+              <h3>ภาพตัวอย่าง</h3>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                  margin: 20px 0;
+                "
+              >
+                <button
+                  id="prevImageBtn"
+                  style="
+                    padding: 6px 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                  "
+                >
+                  Back
+                </button>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    width: 50%;
+                    background: #f0f0f0;
+                    border-radius: 8px;
+                    align-items: center;
+                  "
+                >
+                  <img
+                    id="singleCarouselImage"
+                    src="images/Dic1_image/1.jpeg"
+                    alt="carousel"
+                    style="width: 100%; height: auto; object-fit: contain"
+                  />
+                </div>
+
+                <button
+                  id="nextImageBtn"
+                  style="
+                    padding: 6px 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                  "
+                >
+                  Next
+                </button>
+              </div>
+
+              <div
+                id="imageCounter"
+                style="font-size: 14px; color: #666; margin-top: 10px"
+              ></div>
+            </div>
+
+            <!-- Second Carousel for Caption images -->
+            <div style="margin-top: 60px">
+              <h3>คำอธิบายการใช้งาน</h3>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 20px;
+                  margin: 20px 0;
+                "
+              >
+                <button
+                  id="prevCaptionBtn"
+                  style="
+                    padding: 6px 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                  "
+                >
+                  Back
+                </button>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    width: 50%;
+                    background: #f0f0f0;
+                    border-radius: 8px;
+                    align-items: center;
+                  "
+                >
+                  <img
+                    id="captionCarouselImage"
+                    src="images/Caption_1/screen1.jpg"
+                    alt="caption"
+                    style="width: 100%; height: auto; object-fit: contain"
+                  />
+                </div>
+
+                <button
+                  id="nextCaptionBtn"
+                  style="
+                    padding: 6px 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                  "
+                >
+                  Next
+                </button>
+              </div>
+
+              <div
+                id="captionCounter"
+                style="font-size: 14px; color: #666; margin-top: 10px"
+              ></div>
+            </div>
+
+            <script>
+              const captionImages = [
+                "images/Caption_1TH/1.jpg",
+                "images/Caption_1TH/2.jpg",
+                "images/Caption_1TH/3.jpg",
+                "images/Caption_1TH/4.jpg",
+                "images/Caption_1TH/5.jpg",
+                "images/Caption_1TH/6.jpg",
+                "images/Caption_1TH/7.jpg",
+              ];
+
+              let captionImageIndex = 0;
+
+              function updateCaptionImage() {
+                document.getElementById("captionCarouselImage").src =
+                  captionImages[captionImageIndex];
+                document.getElementById("captionCounter").textContent =
+                  captionImageIndex + 1 + " / " + captionImages.length;
+              }
+
+              document
+                .getElementById("nextCaptionBtn")
+                .addEventListener("click", function () {
+                  captionImageIndex =
+                    (captionImageIndex + 1) % captionImages.length;
+                  updateCaptionImage();
+                });
+
+              document
+                .getElementById("prevCaptionBtn")
+                .addEventListener("click", function () {
+                  captionImageIndex =
+                    (captionImageIndex - 1 + captionImages.length) %
+                    captionImages.length;
+                  updateCaptionImage();
+                });
+
+              updateCaptionImage();
+            </script>
+
+            <script>
+              const singleImages = [
+                "images/Dic1_image/1.jpeg",
+                "images/Dic1_image/2.jpeg",
+                "images/Dic1_image/3.jpeg",
+                "images/Dic1_image/4.jpeg",
+                "images/Dic1_image/5.jpeg",
+                "images/Dic1_image/6.jpeg",
+                "images/Dic1_image/7.jpeg",
+              ];
+
+              let singleImageIndex = 0;
+
+              function updateSingleImage() {
+                document.getElementById("singleCarouselImage").src =
+                  singleImages[singleImageIndex];
+                document.getElementById("imageCounter").textContent =
+                  singleImageIndex + 1 + " / " + singleImages.length;
+              }
+
+              document
+                .getElementById("nextImageBtn")
+                .addEventListener("click", function () {
+                  singleImageIndex =
+                    (singleImageIndex + 1) % singleImages.length;
+                  updateSingleImage();
+                });
+
+              document
+                .getElementById("prevImageBtn")
+                .addEventListener("click", function () {
+                  singleImageIndex =
+                    (singleImageIndex - 1 + singleImages.length) %
+                    singleImages.length;
+                  updateSingleImage();
+                });
+
+              updateSingleImage();
+            </script>
           </div>
         </section>
       </article>
+
+      <!-- App Store Image -->
+      <div style="text-align: center; margin: 40px 0">
+        <a
+          href="https://apps.apple.com/us/app/%E0%B8%A8-%E0%B8%9E%E0%B8%97-%E0%B8%AD-%E0%B8%87%E0%B8%81%E0%B8%A4%E0%B8%A9-%E0%B8%9B-1-6/id6751217234"
+          target="_blank"
+        >
+          <img
+            src="images/appstore.jpg"
+            alt="appstore"
+            style="
+              width: 50%;
+              max-width: 150px;
+              height: auto;
+              /* margin-bottom: 40px; */
+              cursor: pointer;
+            "
+          />
+        </a>
+      </div>
 
       <!-- Footer -->
       <footer id="footer">
